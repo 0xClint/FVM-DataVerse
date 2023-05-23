@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 import { donate } from "../utils/Donate";
 import { getFilPriceData } from "../utils/Price";
 
-const ethers = require("ethers");
+// const ethers = require("ethers");
+import { ethers } from "ethers";
 
 const Petitions = () => {
   const params = useParams();

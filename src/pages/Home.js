@@ -3,7 +3,7 @@ import { Card, Footer, Header } from "../components";
 import { Link } from "react-router-dom";
 import { readData } from "../utils/functions";
 
-const ethers = require("ethers");
+import { ethers } from "ethers";
 
 const Home = () => {
   const [petitionData, setPetitionData] = useState();
@@ -24,7 +24,11 @@ const Home = () => {
       <Header />
       <div className="HeroSection ">
         <div className="absolute -z-10 w-screen flex  justify-center items-center">
-          <img src={require("../assets/map.png")} className="w-[60%]"></img>
+          <img
+            src={require("../assets/map.png")}
+            className="w-[60%]"
+            alt="images"
+          ></img>
         </div>
         <div className="z-1 w-screen flex flex-col justify-center items-center gap-8 pt-[5rem]">
           <h1 className="font-bold text-[3rem] text-center">

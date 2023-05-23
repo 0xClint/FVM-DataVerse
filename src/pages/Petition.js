@@ -17,7 +17,7 @@ const Petition = () => {
   const [content, setContent] = useState("");
   const [signCount, setSignCount] = useState(5);
   const [loader, setLoader] = useState(false);
-  const { data } = useSelector((state) => state);
+  // const { data } = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // console.log(data);
@@ -129,7 +129,11 @@ const Petition = () => {
       <Header />
       <div className="HeroSection ">
         <div className="absolute -z-10 w-screen flex  justify-center items-center">
-          <img src={require("../assets/map.png")} className="w-[60%]"></img>
+          <img
+            src={require("../assets/map.png")}
+            alt="images"
+            className="w-[60%]"
+          ></img>
         </div>
         <div className="formContainer overflow-hidden">
           <div

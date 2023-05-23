@@ -42,6 +42,7 @@ const Slider = ({ data }) => {
                   <div className="slide w-[850px] h-[520px]">
                     <img
                       src={`https://gateway.lighthouse.storage/ipfs/${cid}`}
+                      alt="images"
                       // src={`https://gateway.lighthouse.storage/ipfs/QmZrnjf1iZFY3WnVpJhva3hm9Fa7p2JtekQCrLazS75BSJ`}
                       className="h-[100%]"
                     ></img>

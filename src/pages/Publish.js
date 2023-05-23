@@ -10,9 +10,9 @@ import {
 } from "../utils/functions";
 import Lottie from "react-lottie-player";
 import loaderGif from "../assets/loader.json";
-import { donate } from "../utils/Donate";
 
-const ethers = require("ethers");
+// const ethers = require("ethers");
+import { ethers } from "ethers";
 
 const Publish = () => {
   const { account } = useMoralis();
