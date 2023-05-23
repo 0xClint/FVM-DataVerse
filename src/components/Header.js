@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo } from "../assets";
+import { Logo, Logo2 } from "../assets";
 import { Link } from "react-router-dom";
 import ConnectWallet from "./ConnectWallet";
 
@@ -15,7 +15,7 @@ const Header = () => {
     <div className="flex w-screen justify-around h-20">
       <div className="flex  justify-center items-center w-32 ">
         <Link to="/">
-          <Logo className="w-24" />
+          <Logo2 className="h-16" />
         </Link>
       </div>
       <ul

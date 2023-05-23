@@ -1,7 +1,12 @@
 import { Database } from "@tableland/sdk";
 
 // const mainPetitionTableID = "allPetition_80001_6408";   old
-const mainPetitionTableID = "allPetition_80001_6419";
+
+// Deployed on Polygon
+// const mainPetitionTableID = "allPetition_80001_6419";
+
+// Deployed on FileCoin
+const mainPetitionTableID = "allPetition_3141_194";
 
 export async function createMainPetitionTable(signer) {
   const db = new Database(signer);
@@ -118,8 +123,8 @@ export async function signPetition(signer, data) {
   await updateSignCount.txn.wait();
 }
 
-export async function readData(data) {
-  const db = new Database();
+export async function readData(signer, data) {
+  const db = new Database({ signer });
   const { results } = await db.prepare(`SELECT * FROM ${data};`).all();
 
   // console.log(results);

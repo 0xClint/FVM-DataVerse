@@ -10,7 +10,10 @@ const Home = () => {
 
   useEffect(() => {
     const getPetitionsData = async () => {
-      setPetitionData(await readData("allPetition_80001_6419"));
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      await provider.send("eth_requestAccounts", []);
+      const signer = await provider.getSigner();
+      setPetitionData(await readData(signer, "allPetition_3141_194"));
     };
     getPetitionsData();
   }, []);

@@ -123,14 +123,14 @@ const Publish = () => {
               good.
             </p>
             <div className=" flex justify-end gap-3">
-              <Link to="/start-a-petition">
-                <button
-                  // onClick={() => makeMainPetitionTable()}
-                  className=" text-black border-2 bg-white border-black py-2 px-8 rounded-[5px] text-[1.1rem] hover:border-[#878181] hover:text-[#878181]"
-                >
-                  Edit
-                </button>
-              </Link>
+              {/* <Link to="/start-a-petition"> */}
+              <button
+                onClick={() => makeMainPetitionTable()}
+                className=" text-black border-2 bg-white border-black py-2 px-8 rounded-[5px] text-[1.1rem] hover:border-[#878181] hover:text-[#878181]"
+              >
+                Edit
+              </button>
+              {/* </Link> */}
               <button
                 onClick={() => createPetition()}
                 className="bg-[#2CAE8F] text-white py-2 px-8 rounded-[5px] text-[1.1rem] hover:bg-[#1F9B7E]"
