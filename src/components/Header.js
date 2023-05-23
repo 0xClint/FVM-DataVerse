@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo, UserIcon } from "../assets";
+import { Logo } from "../assets";
 import { Link } from "react-router-dom";
 import ConnectWallet from "./ConnectWallet";
 

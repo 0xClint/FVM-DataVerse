@@ -6,17 +6,19 @@ import Lottie from "react-lottie-player";
 import loaderGif from "../assets/loader.json";
 import { Link } from "react-router-dom";
 import { donate } from "../utils/Donate";
+import { getFilPriceData } from "../utils/Price";
 
 const ethers = require("ethers");
 
 const Petitions = () => {
   const params = useParams();
   const [petitionData, setPetitionData] = useState();
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(true);
   const [error, setError] = useState(false);
   const [isSign, setSign] = useState(false);
   const [isSuccess, setSuccess] = useState(false);
   const [amount, setAmount] = useState("");
+  const [fil, setFil] = useState("");
   const [message, setMessage] = useState("");
   const [loader, setLoader] = useState(false);
 
@@ -69,6 +71,13 @@ const Petitions = () => {
         setError(false);
       }, 1000);
     }
+  };
+
+  const getFilPrice = async () => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    await provider.send("eth_requestAccounts", []);
+    const signer = await provider.getSigner();
+    setFil(await getFilPriceData(signer));
   };
 
   return (
@@ -134,7 +143,7 @@ const Petitions = () => {
                 </div>
               )
             ) : (
-              <div className="z-1000 w-[450px]  bg-white rounded-xl py-10 px-10 flex flex-col justify-center items-center gap-4">
+              <div className="z-1000 w-[450px]  bg-white rounded-xl py-10 px-10 flex flex-col justify-center items-center gap-3">
                 <h2 className=" text-[1.5rem]">Empower Change</h2>
                 <p className="font-medium">Donate to Make a Difference!</p>
 
@@ -143,9 +152,15 @@ const Petitions = () => {
                   className="w-24"
                 ></img>
                 <p className="font-medium">You can also Donate if you want.</p>
+                <div
+                  onClick={() => getFilPrice()}
+                  className="font-bold underline cursor-pointer"
+                >
+                  Get Fil Price{`: ${fil ? fil.toFixed(2) : ""}`}
+                </div>
 
                 <div className="flex flex-col justify-center items-center">
-                  <p className="text-red-600 mt-2 h-6 text-[0.8rem]">
+                  <p className="text-red-600 h-6 text-[0.8rem]">
                     {error ? "Please enter valid amount" : ""}
                   </p>
                   <input
