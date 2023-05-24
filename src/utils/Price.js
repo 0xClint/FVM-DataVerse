@@ -1,6 +1,7 @@
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from "./constant";
 
-const ethers = require("ethers");
+// const ethers = require("ethers");
+import { ethers } from "ethers";
 
 export const getFilPriceData = async (signer) => {
   const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);

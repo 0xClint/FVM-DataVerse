@@ -13,7 +13,8 @@ const Home = () => {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       await provider.send("eth_requestAccounts", []);
       const signer = await provider.getSigner();
-      setPetitionData(await readData(signer, "allPetition_3141_194"));
+      setPetitionData(await readData(signer, "allPetition_80001_6419"));
+      // setPetitionData(await readData(signer, "allPetition_3141_194"));
     };
     getPetitionsData();
   }, []);

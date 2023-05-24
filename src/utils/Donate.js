@@ -1,4 +1,5 @@
-const ethers = require("ethers");
+// const ethers = require("ethers");
+import { ethers } from "ethers";
 
 export async function donate(signer, addr, amount) {
   ethers.utils.getAddress(addr);

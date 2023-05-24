@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Footer, Header, Slider } from "../components";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { uploadFile } from "../utils/fileUpload";
 import { useMoralis } from "react-moralis";
 import {
   createMainPetitionTable,

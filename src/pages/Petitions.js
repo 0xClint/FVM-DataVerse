@@ -14,7 +14,7 @@ import { ethers } from "ethers";
 const Petitions = () => {
   const params = useParams();
   const [petitionData, setPetitionData] = useState();
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
   const [error, setError] = useState(false);
   const [isSign, setSign] = useState(false);
   const [isSuccess, setSuccess] = useState(false);

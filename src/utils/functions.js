@@ -3,10 +3,10 @@ import { Database } from "@tableland/sdk";
 // const mainPetitionTableID = "allPetition_80001_6408";   old
 
 // Deployed on Polygon
-// const mainPetitionTableID = "allPetition_80001_6419";
+const mainPetitionTableID = "allPetition_80001_6419";
 
 // Deployed on FileCoin
-const mainPetitionTableID = "allPetition_3141_194";
+// const mainPetitionTableID = "allPetition_3141_194";
 
 export async function createMainPetitionTable(signer) {
   const db = new Database(signer);
