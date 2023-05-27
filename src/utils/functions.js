@@ -123,8 +123,8 @@ export async function signPetition(signer, data) {
   await updateSignCount.txn.wait();
 }
 
-export async function readData(signer, data) {
-  const db = new Database({ signer });
+export async function readData(data) {
+  const db = new Database();
   const { results } = await db.prepare(`SELECT * FROM ${data};`).all();
 
   // console.log(results);

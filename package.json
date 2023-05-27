@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@lighthouse-web3/sdk": "^0.2.3",
+    "@tableland/cli": "^5.2.0",
     "@tableland/sdk": "^4.2.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",

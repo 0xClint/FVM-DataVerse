@@ -16,12 +16,12 @@ const ConnectWallet = () => {
   useEffect(() => {
     if (isWeb3Enabled) return;
 
-    if (
-      typeof window !== "undefined" &&
-      window.localStorage.getItem("connected")
-    ) {
-      enableWeb3();
-    }
+    // if (
+    //   typeof window !== "undefined" &&
+    //   window.localStorage.getItem("connected")
+    // ) {
+    //   enableWeb3();
+    // }
   }, []);
 
   useEffect(() => {

@@ -2,22 +2,35 @@ import React, { useEffect, useState } from "react";
 import { Card, Footer, Header } from "../components";
 import { Link } from "react-router-dom";
 import { readData } from "../utils/functions";
-
 import { ethers } from "ethers";
+import { useMoralis } from "react-moralis";
 
 const Home = () => {
   const [petitionData, setPetitionData] = useState();
 
+  const {
+    enableWeb3,
+    isWeb3Enabled,
+    account,
+    deactivateWeb3,
+    Moralis,
+    isWeb3EnableLoading,
+  } = useMoralis();
   useEffect(() => {
     const getPetitionsData = async () => {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      await provider.send("eth_requestAccounts", []);
-      const signer = await provider.getSigner();
-      setPetitionData(await readData(signer, "allPetition_80001_6419"));
-      // setPetitionData(await readData(signer, "allPetition_3141_194"));
+      if (isWeb3Enabled) {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        await provider.send("eth_requestAccounts", []);
+        const signer = await provider.getSigner();
+        setPetitionData(await readData("allPetition_80001_6419"));
+        // setPetitionData(await readData(signer, "allPetition_3141_194"));
+      }
+      //  else {
+      //   enableWeb3;
+      // }
     };
     getPetitionsData();
-  }, []);
+  }, [isWeb3Enabled]);
   console.log(petitionData);
 
   return (
